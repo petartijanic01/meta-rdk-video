@@ -3,7 +3,7 @@ PATCHTOOL = "git"
 require wpe-webkit.inc
 
 # Advance PR with every change in the recipe
-PR  = "r13"
+PR  = "r14"
 
 # Temporary build fix
 DEPENDS:append = " virtual/vendor-secapi2-adapter virtual/vendor-gst-drm-plugins "
@@ -37,6 +37,11 @@ SRC_URI += "file://2.38.8/1608_MemoryPressureMonitor.patch"
 
 # Drop after libwpe upgrade
 SRC_URI += "file://2.38.8/RDK-54304-Fix-build-with-an-older-libpwe.patch"
+
+# Downstream changes from page_lifecycle_2.38 branch
+SRC_URI += "file://2.38.8/RDK-60273_page_lifecycle_2.38.patch"
+# But disable page lifecycle api by default
+SRC_URI += "file://2.38.8/comcast-RDK-60273-Disable-page-lifecycle-by-default.patch"
 
 # Comcast specific changes
 SRC_URI += "file://2.38.7/comcast-DELIA-60920-Malloc-Heap-Breakdown.patch"
