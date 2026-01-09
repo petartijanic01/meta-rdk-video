@@ -271,7 +271,8 @@ do_install:append(){
         install -m 0755 ${S}/mfr/test_mfr/mfr_wifiEraseAllData ${D}${bindir}
         install -m 0755 ${S}/mfr/test_mfr/mfr_wifiSetCredentials ${D}${bindir}
         install -m 0755 ${S}/mfr/test_mfr/mfr_wifiGetCredentials ${D}${bindir}
-
+        install -m 0755 ${S}/mfr/test_mfr/test_mfr_get_blocklist ${D}${bindir}
+        install -m 0755 ${S}/mfr/test_mfr/test_mfr_set_blocklist ${D}${bindir}
 }
 
 DEPENDS += "${@bb.utils.contains('DISTRO_FEATURES', 'ctrlm', 'ctrlm-headers', '', d)}"
